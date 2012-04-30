@@ -1,0 +1,21 @@
+#!/sur/bin/python
+# FIlename: Balls
+# 4 balls in 4 boxes. There's one (and only one) boxe is empty. How many cases are there?
+counter = 0
+balls = [0,0,0,0]
+for i in range(0,4):
+	balls[0] = i
+	for j in range(0,4):
+		balls[1] = j
+		for k in range(0,4):
+			balls[2] = k
+			for l in range(0,4):
+				balls[3] = l
+				emptybox = 0
+				for m in range(0,4):
+					if balls[1]!=m and balls[2]!=m and balls[3]!=m and balls[0]!=m:
+						emptybox += 1
+				if emptybox == 1:
+					print(balls)
+					counter += 1
+print(counter)
