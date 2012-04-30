@@ -1,0 +1,13 @@
+#!/usr/bin/python
+# Filename: total
+
+def total(inital = 5, *numbers, **keywords):
+	count = inital
+	for number in numbers:
+		print('number =',number)
+	for key in keywords:
+		print('key = ',key)
+		print('keywords = ',keywords[key])
+	return 1
+
+total(10, 1, 2, 3, vegetables = 5, fruits = 100)
