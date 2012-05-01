@@ -10,7 +10,7 @@ NumberOfEmpty = int(input('Enter the number of empty boxes'))
 balls = [0] * NumberOfBalls
 caseCounter = 0
 
-while balls.count(NumberOfBoxes-1) != NumberOfBalls:
+while balls != [NumberOfBoxes-1] * NumberOfBalls:
 	balls[0] += 1
 	for i in range(0, NumberOfBalls):
 		if balls[i] == NumberOfBoxes:
