@@ -1,0 +1,26 @@
+#!/usr/bin/python
+# Filename ManyBalls 
+
+def map(num, box = 10, ball = 10):
+	b = num % box
+	if ball != 1:
+		return [b] + map((num-b)/box, box, ball-1)
+	else:
+		return [b]
+		
+import Balls		
+
+NumberOfBoxes = int(input('Enter the number of boxes'))
+NumberOfBalls = int(input('Enter the number of balls'))
+NumberOfEmpty = int(input('Enter the number of empty boxes'))
+
+#balls = [0] * NumberOfBalls
+caseCounter = 0
+
+for index in range(0,NumberOfBoxes ** NumberOfBalls):
+	balls = map(index, NumberOfBoxes, NumberOfBalls)
+	if Balls.emptyboxCounter(balls, NumberOfBoxes) == NumberOfEmpty:
+		caseCounter += 1
+		print(balls)
+
+print(caseCounter)	

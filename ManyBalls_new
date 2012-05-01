@@ -1,0 +1,22 @@
+#!/usr/bin/python
+# Filename ManyBalls 
+
+import Balls		
+
+NumberOfBoxes = int(input('Enter the number of boxes'))
+NumberOfBalls = int(input('Enter the number of balls'))
+NumberOfEmpty = int(input('Enter the number of empty boxes'))
+
+balls = [0] * NumberOfBalls
+caseCounter = 0
+
+while balls.count(NumberOfBoxes-1) != NumberOfBalls:
+	balls[0] += 1
+	for i in range(0, NumberOfBalls):
+		if balls[i] == NumberOfBoxes:
+			balls[i+1] += 1
+			balls[i] = 0
+	if Balls.emptyboxCounter(balls, NumberOfBoxes) == NumberOfEmpty:
+		caseCounter += 1
+		print(balls)
+print(caseCounter)	

@@ -1,0 +1,4 @@
+#!/usr/bin/python
+# Filename: test2
+
+a+=[1]
