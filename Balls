@@ -1,8 +1,23 @@
 #!/sur/bin/python
-# FIlename: Balls
+# Filename: Balls
 # 4 balls in 4 boxes. There's one (and only one) boxe is empty. How many cases are there?
-counter = 0
-balls = [0,0,0,0]
+
+def emptyboxCounter(balls, numberOfBoxes = 4):
+	'''Count the number of empty boxes in the input array.
+
+	Blablabla...'''
+	emptybox = 0
+	for m in range(0,numberOfBoxes):
+		for n in balls:
+			if n == m:
+				break
+		else:
+			emptybox += 1
+	return emptybox
+
+
+caseCounter = 0
+balls = [0]*4
 for i in range(0,4):
 	balls[0] = i
 	for j in range(0,4):
@@ -11,11 +26,10 @@ for i in range(0,4):
 			balls[2] = k
 			for l in range(0,4):
 				balls[3] = l
-				emptybox = 0
-				for m in range(0,4):
-					if balls[1]!=m and balls[2]!=m and balls[3]!=m and balls[0]!=m:
-						emptybox += 1
-				if emptybox == 1:
-					print(balls)
-					counter += 1
-print(counter)
+				if emptyboxCounter(balls) == 1:
+					if __name__ == '__main__':
+						print(balls)
+					caseCounter += 1
+
+if __name__ == '__main__':
+	print(caseCounter)
