@@ -2,7 +2,12 @@
 # Filename: function1.py
 
 def sayHello():
+	'''A function to print Hello World.
+
+	Here are details. Blablabla...'''
 	print('Hello World!')
 
 sayHello()
 sayHello()
+print(sayHello.__doc__)
+help(sayHello)
