@@ -1,0 +1,19 @@
+#!/usr/bin/python
+# Filename: reference
+
+print('Simple Assignment')
+shoplist = ['apple', 'mango', 'carrot', 'banana']
+mylist = shoplist  # mylist is another name pointing to the same object!
+
+del shoplist[0]
+
+print('shoplist is', shoplist)
+print('mylist is', mylist)
+# in both list, 'apple' is removed
+
+print('Copy by making a full slice')
+mylist = shoplist[:]
+del mylist[0]
+
+print('shoplist is ', shoplist)
+print('mylist is ', mylist)

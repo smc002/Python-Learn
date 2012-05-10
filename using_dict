@@ -1,0 +1,19 @@
+#!/usr/bin/python
+# Filename: using_dict
+
+ab = {	'name1'	: 'addr1',
+	'name2' : 'addr2',
+	'name3' : 'addr3'}
+
+print('value of name1 is', ab['name1'])
+
+del ab['name3']
+print('\nThere are {0} contacts in the ab\n'.format(len(ab)))
+
+for name, address in ab.items():
+	print('Contact {0} at {1}'.format(name, address))
+
+ab['girlfriend'] = 'peiling'
+
+if 'girlfriend' in ab:#if ab.has_key('girlfriend')
+	print('\nMy girlfriend is', ab['girlfriend'])
